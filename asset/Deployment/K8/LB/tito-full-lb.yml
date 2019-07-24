@@ -23,7 +23,7 @@ metadata:
 spec:
   replicas: 1
   minReadySeconds: 5
-  strategy: 
+  strategy:
     type: Recreate
   selector:
     matchLabels:
@@ -37,7 +37,7 @@ spec:
     spec:
       containers:
       - name: tito-sql
-        image: vmeoc/tito-sql:V1.5
+        image: harbor.vmware.id/tito/tito-sql:V1.5
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3306
@@ -92,7 +92,7 @@ spec:
     spec:
       containers:
         - name: tito
-          image: vmeoc/tito-fe:V1.9.4
+          image: harbor.vmware.id/tito/tito-fe:V1.9.4
           imagePullPolicy: IfNotPresent
           ports:
           - containerPort: 80
